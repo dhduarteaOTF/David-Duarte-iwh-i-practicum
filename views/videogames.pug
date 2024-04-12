@@ -8,9 +8,17 @@ html
         link(rel="stylesheet", href="/css/style.css")
     body    
         h1 Video Games
-        .cards 
+        - var url = "http://localhost:3000/create"
+        a(href=url) Add to this table
+
+        table.table
+            tr
+                td Name
+                td Developer
+                td Description
+
             each videogame in data
-                .card 
-                    h2.card__name #{videogame.properties.name}  
-                    h3.card__name #{videogame.properties.developer}
-                    p.card__email #{videogame.properties.description}
+                tr
+                    td #{videogame.properties.name} 
+                    td #{videogame.properties.developer}
+                    td #{videogame.properties.description}

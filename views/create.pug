@@ -9,6 +9,8 @@ html
     body    
         h1 Video Games
         .cards 
+        - var url = "http://localhost:3000/"
+        a(href=url) Back to Homepage
     form( method="POST")
         label(for="name") Nombre:
         input(type="text", id="name", name="name", required)
