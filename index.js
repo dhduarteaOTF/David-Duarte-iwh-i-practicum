@@ -14,7 +14,7 @@ const PRIVATE_APP_ACCESS = process.env.TOKEN;
 
 // TODO: ROUTE 1 - Create a new app.get route for the homepage to call your custom object data. Pass this data along to the front-end and create a new pug template in the views folder.
 
-app.get('/videogames', async (req, res) => {
+app.get('/', async (req, res) => {
     const contacts = "https://api.hubapi.com/crm/v3/objects/videogames?properties=name,developer,description" ;
     const headers = {
         Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
@@ -62,7 +62,7 @@ app.post('/create', async (req, res) => {
 
     try {     
         await axios.post(createContact, create, { headers } );
-        res.redirect('/videogames');
+        res.redirect('/');
     } catch(err) {
         console.error(err);
     }
